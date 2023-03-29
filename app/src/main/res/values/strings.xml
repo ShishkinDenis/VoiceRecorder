@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">VoiceRecorder</string>
+    <string name="screen_title_recording">Recording</string>
+    <string name="screen_title_playing">Playing</string>
 </resources>
