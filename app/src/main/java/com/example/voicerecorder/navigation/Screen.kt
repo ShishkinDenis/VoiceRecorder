@@ -4,4 +4,5 @@ package com.example.voicerecorder.navigation
 sealed class Screen(val route: String) {
     object Recording : Screen("recording")
     object Playing : Screen("playing")
+    object Records : Screen("records")
 }

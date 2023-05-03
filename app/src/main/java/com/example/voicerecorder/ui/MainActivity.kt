@@ -1,13 +1,11 @@
 package com.example.voicerecorder.ui
 
-import android.Manifest
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
-import androidx.core.app.ActivityCompat
 import androidx.navigation.compose.rememberNavController
 import com.example.voicerecorder.navigation.BottomNavigationBar
 import com.example.voicerecorder.navigation.NavigationSetup
@@ -17,7 +15,6 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requestAudioRecordingPermission()
         setContent {
             VoiceRecorderTheme {
                 Surface(color = MaterialTheme.colors.background) {
@@ -30,11 +27,5 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
-
-    private fun requestAudioRecordingPermission() {
-        ActivityCompat.requestPermissions(
-            this, arrayOf(Manifest.permission.RECORD_AUDIO), 0
-        )
     }
 }

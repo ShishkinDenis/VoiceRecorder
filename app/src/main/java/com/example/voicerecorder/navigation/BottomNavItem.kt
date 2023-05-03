@@ -27,21 +27,20 @@ sealed class BottomNavItem(
         icon = Icons.Default.Mic
     )
 
-    object Playing : BottomNavItem(
-        route = Screen.Playing.route,
-        titleResId = R.string.screen_title_playing,
+    object Records : BottomNavItem(
+        route = Screen.Records.route,
+        titleResId = R.string.screen_title_records,
         icon = Icons.Default.PlayArrow
     )
 }
 
-//TODO remove saving to backstack
 @Composable
 fun BottomNavigationBar(
     navController: NavController
 ) {
     val items = listOf(
         BottomNavItem.Recording,
-        BottomNavItem.Playing
+        BottomNavItem.Records
     )
 
     BottomNavigation {
@@ -59,17 +58,12 @@ fun BottomNavigationBar(
                 selected = currentRoute == item.route,
                 onClick = {
                     navController.navigate(item.route) {
-                        // Pop up to the start destination of the graph to
-                        // avoid building up a large stack of destinations
-                        // on the back stack as users select items
                         navController.graph.startDestinationRoute?.let { route ->
                             popUpTo(route) {
                                 saveState = true
                             }
                         }
-                        // Avoid multiple copies of the same destination when re-selecting the same item
                         launchSingleTop = true
-                        // Restore state when re-selecting a previously selected item
                         restoreState = true
                     }
                 }

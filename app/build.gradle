@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -76,4 +77,13 @@ dependencies {
 
     //Icons
     implementation "androidx.compose.material:material-icons-extended:1.4.0"
+
+    //Room
+    def room_version = "2.5.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+
+    //GSON
+    implementation 'com.google.code.gson:gson:2.9.0'
 }

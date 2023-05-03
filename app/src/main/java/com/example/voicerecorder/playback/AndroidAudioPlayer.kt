@@ -2,25 +2,23 @@ package com.example.voicerecorder.playback
 
 import android.content.Context
 import android.media.MediaPlayer
-import android.os.Environment
 import androidx.core.net.toUri
-import java.io.File
+import com.example.voicerecorder.AudioRecord
 
+//TODO check if player is already launched
 class AndroidAudioPlayer(
-    private val context: Context
+    private val context: Context,
+    private val onCompleted: () -> Unit
 ) : AudioPlayer {
 
     private var player: MediaPlayer? = null
 
-    override fun playFile() {
-        val path: File = Environment.getExternalStoragePublicDirectory(
-            Environment.DIRECTORY_MUSIC
-        )
-        val file = File(path, "fileName.mp3")
-
-        MediaPlayer.create(context, file.toUri()).apply {
+    override fun play(audioRecord: AudioRecord) {
+        MediaPlayer.create(context, audioRecord.filePath?.toUri()).apply {
             player = this
             start()
+        }.setOnCompletionListener {
+            onCompleted()
         }
     }
 
