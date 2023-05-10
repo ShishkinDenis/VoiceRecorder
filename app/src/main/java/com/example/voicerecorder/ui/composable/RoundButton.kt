@@ -42,7 +42,7 @@ fun RoundButton(
 
 @Preview
 @Composable
-fun PreviewOFButton() {
+fun RoundButtonPreview() {
     RoundButton(
         iconId = R.drawable.ic_play,
         iconSize = 60.dp,

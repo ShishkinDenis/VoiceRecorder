@@ -16,7 +16,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.voicerecorder.AudioRecord
+import com.example.voicerecorder.database.AudioRecord
 import com.example.voicerecorder.R
 import com.example.voicerecorder.playback.AndroidAudioPlayer
 import com.example.voicerecorder.ui.composable.RoundButton

@@ -1,6 +1,6 @@
 package com.example.voicerecorder.playback
 
-import com.example.voicerecorder.AudioRecord
+import com.example.voicerecorder.database.AudioRecord
 
 
 interface AudioPlayer {

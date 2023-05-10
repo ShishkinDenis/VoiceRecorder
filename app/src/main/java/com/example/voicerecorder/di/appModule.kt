@@ -6,6 +6,7 @@ import com.example.voicerecorder.database.AppDatabase
 import com.example.voicerecorder.database.AudioRecordDao
 import com.example.voicerecorder.repo.RecorderRepo
 import com.example.voicerecorder.repo.RecorderRepoImpl
+import com.example.voicerecorder.ui.screens.login.LoginViewModel
 import com.example.voicerecorder.ui.screens.recording.RecordingViewModel
 import com.example.voicerecorder.ui.screens.recordings.RecordingsViewModel
 import com.example.voicerecorder.utils.AppConstants.DATABASE_NAME
@@ -19,14 +20,16 @@ val appModule = module {
             get(), AppDatabase::class.java, DATABASE_NAME
         ).fallbackToDestructiveMigration().build()
     }
-    //TODO move fun
-    fun provideDao(appDatabase: AppDatabase): AudioRecordDao {
-        return appDatabase.dao
-    }
     single { provideDao(get()) }
     single<RecorderRepo> { RecorderRepoImpl(get()) }
     single { AndroidAudioRecorder(get(), get()) }
 
     viewModel { RecordingsViewModel(get()) }
     viewModel { RecordingViewModel() }
+    viewModel { LoginViewModel() }
+}
+
+//TODO move fun
+fun provideDao(appDatabase: AppDatabase): AudioRecordDao {
+    return appDatabase.dao
 }

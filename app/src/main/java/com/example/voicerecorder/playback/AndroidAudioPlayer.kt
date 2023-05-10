@@ -3,7 +3,7 @@ package com.example.voicerecorder.playback
 import android.content.Context
 import android.media.MediaPlayer
 import androidx.core.net.toUri
-import com.example.voicerecorder.AudioRecord
+import com.example.voicerecorder.database.AudioRecord
 
 //TODO check if player is already launched
 class AndroidAudioPlayer(

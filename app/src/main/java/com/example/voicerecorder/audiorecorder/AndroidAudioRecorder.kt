@@ -4,7 +4,7 @@ import android.content.Context
 import android.media.MediaRecorder
 import android.os.Build
 import android.os.Environment
-import com.example.voicerecorder.AudioRecord
+import com.example.voicerecorder.database.AudioRecord
 import com.example.voicerecorder.repo.RecorderRepo
 import com.example.voicerecorder.utils.AppConstants
 import kotlinx.coroutines.CoroutineScope

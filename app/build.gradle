@@ -65,6 +65,10 @@ dependencies {
     //viewModel
     implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1'
 
+    implementation "androidx.lifecycle:lifecycle-runtime-compose:$compose_ui_version"
+
+
+
     //Koin
     def koin_version = '3.3.3'
     implementation "io.insert-koin:koin-core:$koin_version"

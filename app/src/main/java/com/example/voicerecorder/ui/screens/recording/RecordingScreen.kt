@@ -21,7 +21,6 @@ import com.example.voicerecorder.audiorecorder.AudioRecorderService
 import com.example.voicerecorder.ui.composable.RoundButton
 import org.koin.androidx.compose.koinViewModel
 
-// TODO strings
 @Composable
 fun RecordingScreen(viewModel: RecordingViewModel = koinViewModel()) {
 
@@ -54,6 +53,7 @@ fun RecordingScreen(viewModel: RecordingViewModel = koinViewModel()) {
         )
     }
 
+//    TODO do we need column?
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,

@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     Scaffold(
                         bottomBar = { BottomNavigationBar(navController) }
-                    ) {
+                    ) { it
                         NavigationSetup(navController = navController)
                     }
                 }

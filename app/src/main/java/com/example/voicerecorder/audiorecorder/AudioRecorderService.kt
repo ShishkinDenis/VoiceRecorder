@@ -12,7 +12,8 @@ import org.koin.android.ext.android.inject
 //TODO const strings
 // TODO use coroutine for recording?
 class AudioRecorderService : Service() {
-    val ACTION_STOP_SERVICE = "STOP"
+
+    private val ACTION_STOP_SERVICE = "STOP"
 
 //    TODO move recorder to ViewModel
     private val recorder: AndroidAudioRecorder by inject()

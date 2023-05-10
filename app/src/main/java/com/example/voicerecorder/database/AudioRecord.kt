@@ -1,4 +1,4 @@
-package com.example.voicerecorder
+package com.example.voicerecorder.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

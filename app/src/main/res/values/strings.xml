@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Voice Recorder</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
     <string name="screen_title_recording">Recording</string>
+    <string name="no_records">No records</string>
     <string name="screen_title_playing">Playing</string>
     <string name="screen_title_records">Records</string>
 </resources>
